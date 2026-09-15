@@ -11,5 +11,5 @@ public class Calculadora {
         int numero = Integer.parseInt(sc.nextLine());
         int resultado = 100 / numero;
         System.out.println("Resultado: " + resultado);
-    }
+    } 
 }
