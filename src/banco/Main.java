@@ -1,5 +1,7 @@
 package banco;
 
+import java.io.IOException;
+
 public class Main {
 	public static void main(String[] args) {
 
@@ -8,7 +10,11 @@ public class Main {
 
 		Banco banco = new Banco();
 
-		banco.transferir(cuenta1, cuenta2, 300);
+		try {
+			banco.transferir(cuenta1, cuenta2, 300);
+		} catch (TransferenciaException e) {
+			e.printStackTrace();
+		}
 
 		System.out.println("Saldo Ana: " + cuenta1.getSaldo());
 
@@ -16,7 +22,11 @@ public class Main {
 
 		GestorFicheros gestor = new GestorFicheros();
 
-		gestor.comprobarFichero();
+		try {
+			gestor.comprobarFichero();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
